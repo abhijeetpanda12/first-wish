@@ -32,8 +32,6 @@ class WelcomeScreen extends StatelessWidget {
             color: Colors.white,
           ),
           onPressed: () {
-            print(auth.currentUser.uid);
-            auth.signOut();
             Navigator.pushNamed(context, BeneficiaryScreen.id);
           },
         ),
@@ -78,6 +76,7 @@ class WelcomeScreen extends StatelessWidget {
                     color: Colors.white,
                     elevation: 10,
                     onPressed: () {
+                      auth.signOut();
                       Navigator.pushNamedAndRemoveUntil(
                           context, RegistrationScreen.id, (r) => false);
                     },
