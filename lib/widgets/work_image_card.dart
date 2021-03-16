@@ -1,43 +1,40 @@
-import 'package:first_wish/constants.dart';
 import 'package:flutter/material.dart';
 
 class WorkCard extends StatelessWidget {
-  final String celebrationName;
+  // final String celebrationName;
   final String imagePath;
   final String date;
-  WorkCard({this.celebrationName, this.imagePath, this.date});
+  WorkCard({this.imagePath, this.date});
   @override
   Widget build(BuildContext context) {
     return Card(
       child: Container(
-        padding: EdgeInsets.symmetric(
-          vertical: 10,
-        ),
+        padding: EdgeInsets.symmetric(vertical: 10, horizontal: 10),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(30),
         ),
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            Text(
-              celebrationName,
-              overflow: TextOverflow.clip,
-              style: kMainTextStyle,
-            ),
-            SizedBox(
-              height: 5,
-            ),
-            Text(
-              date,
-              overflow: TextOverflow.clip,
-              style: kUnderInfoStyle,
-            ),
-            SizedBox(
-              height: 5,
-            ),
+            // Text(
+            //   celebrationName,
+            //   overflow: TextOverflow.clip,
+            //   style: kMainTextStyle,
+            // ),
+            // SizedBox(
+            //   height: 5,
+            // ),
+            // Text(
+            //   date,
+            //   overflow: TextOverflow.clip,
+            //   style: kUnderInfoStyle,
+            // ),
+            // SizedBox(
+            //   height: 5,
+            // ),
             ClipRRect(
               borderRadius: BorderRadius.circular(10.0),
-              child: Image.network(imagePath, fit: BoxFit.fill),
+              child: Image.network(imagePath, fit: BoxFit.cover),
             )
           ],
         ),
