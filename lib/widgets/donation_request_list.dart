@@ -10,14 +10,16 @@ class DonationCardList extends StatelessWidget {
   final FirebaseAuth auth = FirebaseAuth.instance;
   CollectionReference _payments =
       FirebaseFirestore.instance.collection('payments');
-  final formatter = DateFormat("dd MMM yyyy");
+  final formatter = DateFormat("dd MMM yyyy").add_jm();
 
   @override
   Widget build(BuildContext context) {
     // _payments = _payments.where('uid', isEqualTo: auth.currentUser.uid).get();
     return StreamBuilder<QuerySnapshot>(
-        stream:
-            _payments.where('uid', isEqualTo: auth.currentUser.uid).snapshots(),
+        stream: _payments
+            .where('uid', isEqualTo: auth.currentUser.uid)
+            .orderBy('timestamp')
+            .snapshots(),
         builder: (context, AsyncSnapshot snapshot) {
           if (!snapshot.hasData) {
             return Center(child: CircularProgressIndicator());
@@ -34,11 +36,10 @@ class DonationCardList extends StatelessWidget {
               date: formatter.format(dateString.toDate()),
             ));
           }
-          return donationCardList != []
+          return donationCardList.isNotEmpty
               ? ListView(
                   scrollDirection: Axis.vertical,
-                  children: donationCardList,
-                  reverse: true,
+                  children: List.from(donationCardList.reversed),
                 )
               : Container(
                   child: Text(

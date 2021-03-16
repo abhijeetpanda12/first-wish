@@ -15,10 +15,15 @@ class DecoratedTextInput extends StatelessWidget {
           Flexible(
             child: TextField(
               controller: textController,
+              style: TextStyle(color: Theme.of(context).primaryColor),
               decoration: InputDecoration(
-                labelText: nameText,
-                border: const OutlineInputBorder(),
-              ),
+                  enabledBorder: OutlineInputBorder(
+                    borderSide: BorderSide(
+                        color: Theme.of(context).primaryColor, width: 2.0),
+                  ),
+                  labelText: nameText,
+                  labelStyle: TextStyle(color: Theme.of(context).primaryColor),
+                  border: const OutlineInputBorder()),
             ),
           ),
         ],

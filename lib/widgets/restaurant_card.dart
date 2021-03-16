@@ -216,9 +216,16 @@ class _RestaurantCardState extends State<RestaurantCard> {
                         ),
                       );
                     },
-              child: Text(
-                'Donate',
-                style: TextStyle(color: Colors.white),
+              child: Padding(
+                padding: const EdgeInsets.all(10.0),
+                child: Text(
+                  'Donate',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 20,
+                    fontWeight: FontWeight.w400,
+                  ),
+                ),
               ),
               minWidth: 200,
               shape: RoundedRectangleBorder(

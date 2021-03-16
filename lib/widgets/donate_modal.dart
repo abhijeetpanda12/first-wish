@@ -69,7 +69,7 @@ class DonateModalWidget extends StatelessWidget {
               textController: addressController,
               nameText: "Enter Your Address",
             ),
-            FlatButton(
+            RaisedButton(
               color: Colors.green,
               onPressed: () {
                 print(amount);
@@ -79,12 +79,16 @@ class DonateModalWidget extends StatelessWidget {
                   // Navigator.popAndPushNamed(context, DonationScreen.id);
                   onpress(nameController.text, addressController.text);
               },
-              child: Text(
-                'Proceed to Pay',
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 20,
-                  fontWeight: FontWeight.w300,
+              child: Padding(
+                padding:
+                    const EdgeInsets.symmetric(vertical: 8.0, horizontal: 12),
+                child: Text(
+                  'Proceed to Pay',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 22,
+                    fontWeight: FontWeight.w300,
+                  ),
                 ),
               ),
               shape: RoundedRectangleBorder(
