@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "897915148950",
+    "project_id": "first-wish-77166",
+    "storage_bucket": "first-wish-77166.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:897915148950:android:0c60c712181686a84d40b7",
+        "android_client_info": {
+          "package_name": "com.smileforever.first_wish.dev"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "897915148950-889cr1plhqio39luf1gjrqqkh8baas27.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.smileforever.first_wish.dev",
+            "certificate_hash": "ed4b3735bed0689e94d872fe2a7f2b3e12683038"
+          }
+        },
+        {
+          "client_id": "897915148950-g6jo1lc1ggbepu3pna3c4c1ptscmhjv4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCWn1z7IacTEyoLOc1r2iroNX5OjDw2RIg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "897915148950-g6jo1lc1ggbepu3pna3c4c1ptscmhjv4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
