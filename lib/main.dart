@@ -1,5 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:firebase_remote_config/firebase_remote_config.dart';
+import 'package:first_wish/constants.dart';
 import 'package:first_wish/screens/about_us_screen.dart';
 import 'package:first_wish/screens/beneficiary_screen.dart';
 import 'package:first_wish/screens/donation_screen.dart';
@@ -12,6 +14,12 @@ import 'screens/welcome_screen.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
+  final RemoteConfig remoteConfig = await RemoteConfig.instance;
+  await remoteConfig.fetch(expiration: Duration(hours: 1));
+  await remoteConfig.activateFetched();
+
+  String val = remoteConfig.getValue('razorpayKey').asString();
+  init_razor(val);
   runApp(MyApp());
 }
 

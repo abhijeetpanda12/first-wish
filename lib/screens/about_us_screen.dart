@@ -1,4 +1,5 @@
 import 'package:first_wish/constants.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class AboutScreen extends StatelessWidget {
@@ -21,65 +22,103 @@ class AboutScreen extends StatelessWidget {
               height: 10,
             ),
             Expanded(
-              child: Container(
-                padding: EdgeInsets.symmetric(vertical: 8),
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.only(
-                    topRight: Radius.circular(20),
-                    topLeft: Radius.circular(20),
-                  ),
-                ),
-                child: Container(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.stretch,
-                    children: [
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.center,
+              child: Column(
+                children: [
+                  Container(
+                    padding: EdgeInsets.symmetric(vertical: 8),
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.only(
+                        topRight: Radius.circular(20),
+                        topLeft: Radius.circular(20),
+                      ),
+                    ),
+                    child: Container(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.stretch,
                         children: [
-                          CircleAvatar(
-                            backgroundColor: Colors.white,
-                            radius: 50,
-                            child: Icon(
-                              Icons.child_care,
-                              size: 70,
-                            ),
-                          ),
-                          Text(
-                            'First Wish',
-                            style: TextStyle(
-                              color: Theme.of(context).primaryColor,
-                              fontSize: 40,
-                              fontWeight: FontWeight.w400,
-                            ),
-                          ),
-                          Text(
-                            'by Smile Forever',
-                            style: TextStyle(
-                              color: Theme.of(context).primaryColor,
-                              fontSize: 24,
-                              fontWeight: FontWeight.w300,
-                            ),
-                          ),
-                          SizedBox(
-                            height: 40,
-                          ),
-                          Container(
-                            padding: EdgeInsets.all(20),
-                            child: Text(
-                              'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
-                              style: TextStyle(
-                                color: Theme.of(context).accentColor,
-                                fontSize: 20,
-                                fontWeight: FontWeight.w300,
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: [
+                              CircleAvatar(
+                                backgroundColor: Colors.white,
+                                radius: 50,
+                                child: Icon(
+                                  Icons.child_care,
+                                  size: 70,
+                                ),
                               ),
-                            ),
+                              Text(
+                                'First Wish',
+                                style: TextStyle(
+                                  color: Theme.of(context).primaryColor,
+                                  fontSize: 40,
+                                  fontWeight: FontWeight.w400,
+                                ),
+                              ),
+                              Text(
+                                'by Smile Forever',
+                                style: TextStyle(
+                                  color: Theme.of(context).primaryColor,
+                                  fontSize: 24,
+                                  fontWeight: FontWeight.w300,
+                                ),
+                              ),
+                            ],
                           ),
                         ],
                       ),
-                    ],
+                    ),
                   ),
-                ),
+                  Expanded(
+                    child: Container(
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.only(
+                          bottomLeft: Radius.circular(20),
+                          bottomRight: Radius.circular(20),
+                        ),
+                      ),
+                      child: SingleChildScrollView(
+                        child: Container(
+                          padding: EdgeInsets.symmetric(
+                              vertical: 30, horizontal: 20),
+                          child: RichText(
+                            textAlign: TextAlign.center,
+                            text: TextSpan(
+                              text: smile_forever_description,
+                              style: TextStyle(
+                                color: Theme.of(context).accentColor,
+                                fontSize: 22,
+                                fontWeight: FontWeight.w400,
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                  Container(
+                    padding: EdgeInsets.symmetric(vertical: 10),
+                    child: RaisedButton(
+                      padding: EdgeInsets.all(10),
+                      color: Colors.white,
+                      elevation: 10,
+                      onPressed: () {
+                        Navigator.pop(context);
+                      },
+                      child: Text('Home',
+                          style: TextStyle(
+                            color: Theme.of(context).primaryColor,
+                            fontSize: 20,
+                            fontWeight: FontWeight.w400,
+                          )),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(30.0),
+                      ),
+                    ),
+                  )
+                ],
               ),
             ),
           ],
