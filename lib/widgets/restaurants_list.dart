@@ -11,12 +11,12 @@ class RestaurantsList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.only(top: 10),
+      padding: EdgeInsets.only(top: 15),
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.only(
-          topRight: Radius.circular(20),
-          topLeft: Radius.circular(20),
+          topRight: Radius.circular(30),
+          topLeft: Radius.circular(30),
         ),
       ),
       child: StreamBuilder<QuerySnapshot>(

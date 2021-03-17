@@ -33,12 +33,14 @@ class DonateModalWidget extends StatelessWidget {
                     'Restaurant Selected : ',
                     style: TextStyle(
                       fontSize: 14,
-                      color: Colors.grey,
+                      color: Colors.blueGrey,
                     ),
                   ),
                   Text(
                     selectedRestaurant,
-                    style: TextStyle(fontSize: 20),
+                    style: TextStyle(
+                        fontSize: 20,
+                        color: Theme.of(context).primaryColorDark),
                   ),
                 ],
               ),
@@ -51,12 +53,14 @@ class DonateModalWidget extends StatelessWidget {
                     'Donation Amount : ',
                     style: TextStyle(
                       fontSize: 14,
-                      color: Colors.grey,
+                      color: Colors.blueGrey,
                     ),
                   ),
                   Text(
                     amount.toString(),
-                    style: TextStyle(fontSize: 20),
+                    style: TextStyle(
+                        fontSize: 20,
+                        color: Theme.of(context).primaryColorDark),
                   ),
                 ],
               ),
@@ -70,7 +74,7 @@ class DonateModalWidget extends StatelessWidget {
               nameText: "Enter Your Address",
             ),
             RaisedButton(
-              color: Colors.green,
+              color: Colors.lightGreen,
               onPressed: () {
                 print(amount);
                 if (amount > 0 &&

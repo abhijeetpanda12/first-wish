@@ -144,24 +144,29 @@ class _RestaurantCardState extends State<RestaurantCard> {
   @override
   Widget build(BuildContext context) {
     return Card(
+      shape: RoundedRectangleBorder(
+        borderRadius: new BorderRadius.circular(30.0),
+      ),
       child: Container(
-        padding: EdgeInsets.symmetric(
-          vertical: 10,
-        ),
+        padding: EdgeInsets.symmetric(vertical: 10, horizontal: 20),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(30),
         ),
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            Text(
-              widget.restaurantName,
-              overflow: TextOverflow.clip,
-              style: kMainTextStyle,
+            Center(
+              child: Text(
+                widget.restaurantName,
+                overflow: TextOverflow.clip,
+                style: kMainTextStyle,
+              ),
             ),
-            Text(
-              widget.restaurantDonations,
-              style: kUnderInfoStyle,
+            Center(
+              child: Text(
+                widget.restaurantDonations,
+                style: kUnderInfoStyle,
+              ),
             ),
             SizedBox(
               height: 5,
@@ -173,68 +178,81 @@ class _RestaurantCardState extends State<RestaurantCard> {
             SizedBox(
               height: 5,
             ),
-            Text('Available Coupons'),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: [
-                DonateAmountButton(
-                  amount: widget.amountList[0],
-                  onPress: selectAmountPress,
-                  donation: _donationAmount,
+            Center(
+              child: Text(
+                'Available Coupons',
+                style: TextStyle(
+                  color: Colors.black,
+                  fontSize: 18,
+                  fontWeight: FontWeight.w300,
                 ),
-                DonateAmountButton(
-                  amount: widget.amountList[1],
-                  onPress: selectAmountPress,
-                  donation: _donationAmount,
-                ),
-                DonateAmountButton(
-                  amount: widget.amountList[2],
-                  onPress: selectAmountPress,
-                  donation: _donationAmount,
-                ),
-              ],
+              ),
             ),
-            FlatButton(
-              color: Colors.green,
-              onPressed: !_amountSelected
-                  ? null
-                  : () {
-                      showModalBottomSheet(
-                        context: context,
-                        isScrollControlled: true,
-                        builder: (context) => SingleChildScrollView(
-                          child: Container(
-                            padding: EdgeInsets.only(
-                                bottom:
-                                    MediaQuery.of(context).viewInsets.bottom),
-                            child: DonateModalWidget(
-                              selectedRestaurant: widget.restaurantName,
-                              amount: _donationAmount.toDouble(),
-                              onpress: openCheckout,
+            Center(
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+                  DonateAmountButton(
+                    amount: widget.amountList[0],
+                    onPress: selectAmountPress,
+                    donation: _donationAmount,
+                  ),
+                  DonateAmountButton(
+                    amount: widget.amountList[1],
+                    onPress: selectAmountPress,
+                    donation: _donationAmount,
+                  ),
+                  DonateAmountButton(
+                    amount: widget.amountList[2],
+                    onPress: selectAmountPress,
+                    donation: _donationAmount,
+                  ),
+                ],
+              ),
+            ),
+            Center(
+              child: FlatButton(
+                color: Colors.lightGreen,
+                onPressed: !_amountSelected
+                    ? null
+                    : () {
+                        showModalBottomSheet(
+                          context: context,
+                          isScrollControlled: true,
+                          builder: (context) => SingleChildScrollView(
+                            child: Container(
+                              padding: EdgeInsets.only(
+                                  bottom:
+                                      MediaQuery.of(context).viewInsets.bottom),
+                              child: DonateModalWidget(
+                                selectedRestaurant: widget.restaurantName,
+                                amount: _donationAmount.toDouble(),
+                                onpress: openCheckout,
+                              ),
                             ),
                           ),
-                        ),
-                      );
-                    },
-              child: Padding(
-                padding: const EdgeInsets.all(10.0),
-                child: Text(
-                  'Donate',
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 20,
-                    fontWeight: FontWeight.w400,
+                        );
+                      },
+                child: Padding(
+                  padding: const EdgeInsets.all(10.0),
+                  child: Text(
+                    'Donate',
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 20,
+                      fontWeight: FontWeight.w400,
+                    ),
                   ),
                 ),
-              ),
-              minWidth: 200,
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(30.0),
+                minWidth: 200,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(30.0),
+                ),
               ),
             ),
-            SizedBox(
-              height: 40,
-            )
+            // SizedBox(
+            //   height: 40,
+            // )
           ],
         ),
       ),

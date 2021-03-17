@@ -93,83 +93,97 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
     //   ),
     return Scaffold(
       // backgroundColor: Color.fromRGBO(0, 0, 0, 0.8),
-      backgroundColor: Colors.white,
       // backgroundColor: Theme.of(context).primaryColor.withOpacity(0.45),
       body: SafeArea(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            CircleAvatar(
-              backgroundColor: Colors.white,
-              radius: 50,
-              child: Icon(
-                Icons.child_care,
-                size: 70,
-              ),
+        child: Container(
+          decoration: BoxDecoration(
+            gradient: LinearGradient(
+              begin: Alignment.bottomLeft,
+              end: Alignment.topRight,
+              colors: [
+                Theme.of(context).primaryColor,
+                Colors.white,
+                Colors.white,
+                Colors.white,
+                Theme.of(context).primaryColor
+              ],
             ),
-            Text(
-              'First Wish',
-              style: TextStyle(
-                color: Theme.of(context).primaryColor,
-                fontSize: 40,
-                fontWeight: FontWeight.w400,
-              ),
-            ),
-            Text(
-              'by Smile Forever',
-              style: TextStyle(
-                color: Theme.of(context).primaryColor,
-                fontSize: 24,
-                fontWeight: FontWeight.w300,
-              ),
-            ),
-            DecoratedInput(
-              textController: textController,
-              nameText: "Enter Phone Number",
-            ),
-            FlatButton(
-              color: Theme.of(context).primaryColor,
-              onPressed: () async {
-                phoneNumber = '+91' + textController.text;
-                verifyNumber();
-              },
-              child: Text(
-                'Get OTP',
-                style: TextStyle(color: Colors.white, fontSize: 18),
-              ),
-              minWidth: 130,
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(30.0),
-              ),
-            ),
-            DecoratedInput(
-              textController: otpController,
-              nameText: "Enter OTP",
-            ),
-            RaisedButton(
-              padding: EdgeInsets.all(10),
-              color: Theme.of(context).primaryColor,
-              elevation: 10,
-              onPressed: () async {
-                otp = otpController.text;
-                signin();
-              },
-              child: Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 50),
-                child: Text(
-                  'Login',
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 24,
-                    fontWeight: FontWeight.w300,
-                  ),
+          ),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              CircleAvatar(
+                backgroundColor: Colors.white,
+                radius: 50,
+                child: Icon(
+                  Icons.child_care,
+                  size: 70,
                 ),
               ),
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(30.0),
+              Text(
+                'First Wish',
+                style: TextStyle(
+                  color: Theme.of(context).primaryColor,
+                  fontSize: 40,
+                  fontWeight: FontWeight.w400,
+                ),
               ),
-            )
-          ],
+              Text(
+                'by Smile Forever',
+                style: TextStyle(
+                  color: Theme.of(context).primaryColor,
+                  fontSize: 24,
+                  fontWeight: FontWeight.w300,
+                ),
+              ),
+              DecoratedInput(
+                textController: textController,
+                nameText: "Enter Phone Number",
+              ),
+              FlatButton(
+                color: Theme.of(context).primaryColor,
+                onPressed: () async {
+                  phoneNumber = '+91' + textController.text;
+                  verifyNumber();
+                },
+                child: Text(
+                  'Get OTP',
+                  style: TextStyle(color: Colors.white, fontSize: 18),
+                ),
+                minWidth: 130,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(30.0),
+                ),
+              ),
+              DecoratedInput(
+                textController: otpController,
+                nameText: "Enter OTP",
+              ),
+              RaisedButton(
+                padding: EdgeInsets.all(10),
+                color: Theme.of(context).primaryColor,
+                elevation: 10,
+                onPressed: () async {
+                  otp = otpController.text;
+                  signin();
+                },
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 50),
+                  child: Text(
+                    'Login',
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 24,
+                      fontWeight: FontWeight.w300,
+                    ),
+                  ),
+                ),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(30.0),
+                ),
+              )
+            ],
+          ),
         ),
       ),
     );

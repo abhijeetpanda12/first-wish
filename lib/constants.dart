@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 
 const kMainTextStyle = TextStyle(
+  color: Color(0xFFD32F2F),
   fontSize: 25,
   fontWeight: FontWeight.w300,
 );
 
 const kUnderInfoStyle = TextStyle(
-  color: Colors.grey,
+  color: Colors.blueGrey,
   fontSize: 15,
   fontWeight: FontWeight.w500,
 );
