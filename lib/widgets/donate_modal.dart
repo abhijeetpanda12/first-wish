@@ -50,7 +50,7 @@ class DonateModalWidget extends StatelessWidget {
               child: Row(
                 children: [
                   Text(
-                    'Donation Amount : ',
+                    'Donation Amount : ₹',
                     style: TextStyle(
                       fontSize: 14,
                       color: Colors.blueGrey,
