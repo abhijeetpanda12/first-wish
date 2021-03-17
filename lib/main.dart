@@ -21,7 +21,8 @@ void main() async {
 
   String val = remoteConfig.getValue('razorpayKey').asString();
   String updateVal = remoteConfig.getValue('updateRequired').asString();
-  initConfigVars(val, updateVal.toLowerCase() == 'true');
+  String msg = remoteConfig.getValue('updateMessage').asString();
+  initConfigVars(val, updateVal.toLowerCase() == 'true', msg);
   runApp(MyApp());
 }
 

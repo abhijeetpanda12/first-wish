@@ -73,7 +73,7 @@ class _RestaurantCardState extends State<RestaurantCard> {
       "amount": _donationAmount,
       "restaurantName": widget.restaurantName,
       "uid": auth.currentUser.uid,
-      "razorpayId": response.code,
+      "razorpayId": "code : ${response.code} || message = ${response.message}",
       "success": false,
       "timestamp": DateTime.now()
     });

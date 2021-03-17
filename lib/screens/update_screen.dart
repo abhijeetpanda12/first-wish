@@ -1,3 +1,4 @@
+import 'package:first_wish/constants.dart';
 import 'package:flutter/material.dart';
 
 class UpdateScreen extends StatelessWidget {
@@ -11,7 +12,7 @@ class UpdateScreen extends StatelessWidget {
         padding: EdgeInsets.all(40),
         child: Center(
           child: Text(
-            'There are some Exciting changes coming your way!\n\nPlease Update your App to enjoy them.',
+            updateMessage,
             style:
                 TextStyle(fontSize: 24, color: Theme.of(context).primaryColor),
           ),

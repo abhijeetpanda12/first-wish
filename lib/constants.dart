@@ -19,13 +19,15 @@ const kHeadingStyle = TextStyle(
 );
 
 // const razorpayKey = "rzp_test_XJxRaPfWPpLHAt";
-initConfigVars(String val, bool updateVal) {
+initConfigVars(String val, bool updateVal, String msg) {
   razorpayKey = val;
   updateRequired = updateVal;
+  updateMessage = msg;
 }
 
 bool updateRequired = false;
 var razorpayKey = "";
+var updateMessage = "";
 const razorpayAppName = "First Wish";
 const razorpayAppDescription = "You are making a donation to First Wish";
 
