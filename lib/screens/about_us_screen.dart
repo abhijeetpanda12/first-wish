@@ -88,7 +88,7 @@ class AboutScreen extends StatelessWidget {
                             text: TextSpan(
                               text: smile_forever_description,
                               style: TextStyle(
-                                color: Theme.of(context).accentColor,
+                                color: Colors.blueGrey,
                                 fontSize: 22,
                                 fontWeight: FontWeight.w400,
                               ),

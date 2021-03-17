@@ -45,23 +45,16 @@ class DonationRequestCard extends StatelessWidget {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: [
-                          Center(
-                            child: Text(
-                              restaurantName,
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 25,
-                                fontWeight: FontWeight.w400,
-                              ),
-                            ),
-                          ),
-                          Center(
-                            child: Text(
-                              '₹ ' + amount.toInt().toString(),
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 30,
-                                fontWeight: FontWeight.w900,
+                          Expanded(
+                            child: Center(
+                              child: Text(
+                                restaurantName,
+                                overflow: TextOverflow.ellipsis,
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 25,
+                                  fontWeight: FontWeight.w400,
+                                ),
                               ),
                             ),
                           ),
@@ -82,15 +75,30 @@ class DonationRequestCard extends StatelessWidget {
                 ),
                 Expanded(
                   child: Center(
-                    child: Container(
-                      child: Text(
-                        isApproved ? 'Success' : 'Failed',
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 20,
-                          fontWeight: FontWeight.w500,
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      children: [
+                        Center(
+                          child: Text(
+                            '₹ ' + amount.toInt().toString(),
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 30,
+                              fontWeight: FontWeight.w900,
+                            ),
+                          ),
                         ),
-                      ),
+                        Container(
+                          child: Text(
+                            isApproved ? 'Success' : 'Failed',
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 20,
+                              fontWeight: FontWeight.w500,
+                            ),
+                          ),
+                        ),
+                      ],
                     ),
                   ),
                 )

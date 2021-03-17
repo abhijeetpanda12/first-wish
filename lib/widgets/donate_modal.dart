@@ -36,11 +36,14 @@ class DonateModalWidget extends StatelessWidget {
                       color: Colors.blueGrey,
                     ),
                   ),
-                  Text(
-                    selectedRestaurant,
-                    style: TextStyle(
-                        fontSize: 20,
-                        color: Theme.of(context).primaryColorDark),
+                  Expanded(
+                    child: Text(
+                      selectedRestaurant,
+                      overflow: TextOverflow.ellipsis,
+                      style: TextStyle(
+                          fontSize: 20,
+                          color: Theme.of(context).primaryColorDark),
+                    ),
                   ),
                 ],
               ),
@@ -50,14 +53,14 @@ class DonateModalWidget extends StatelessWidget {
               child: Row(
                 children: [
                   Text(
-                    'Donation Amount : ₹',
+                    'Donation Amount : ',
                     style: TextStyle(
                       fontSize: 14,
                       color: Colors.blueGrey,
                     ),
                   ),
                   Text(
-                    amount.toString(),
+                    "₹" + amount.toString(),
                     style: TextStyle(
                         fontSize: 20,
                         color: Theme.of(context).primaryColorDark),
